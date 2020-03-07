@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Document</title><link rel=stylesheet href=/wodexiangmu/dist/css/cart.css></head><body><div class=box></div><script src=../js/cookie.js></script><script src=../lib/jquery/dist/jquery.min.js></script><script>var login = getCookie('login')
+
+        if(login === ''){
+            window.location.href = '../pages/index.html'
+        } 
+
+        const cartList = JSON.parse(localStorage.getItem('cartList'))
+
+        if (!cartList) {
+            alert('你的购物车为空')
+        } else {
+            
+            bindHtml()
+
+            bindEvent()
+
+        }
+
+        console.log(cartList)
+
+        function bindHtml() {
+
+            let selectAll = cartList.every(item =>{
+                return item.isSelect === true
+            })
+
+
+            let selectArr = cartList.filter(item => item.isSelect)
+            // console.log(selectArr)
+
+
+            let selectNumber = 0
+
+            let selectPrice = 0
+
+            selectArr.forEach(item =>{
+                selectNumber += item.number
+                selectPrice  += item.xiaoji
+            })
+
+            
+            let str = `
+                    <div class="top">
+                        <p>全选：<input class="selectAll" type="checkbox" ${ selectAll ? 'checked' : '' }></p>
+                        <div class="zong">
+                            <span>总价：<mark>￥${ selectPrice.toFixed(2) }</mark></span>
+                        </div>
+                        <div class="shu">
+                            <span>数量：<mark>${ selectNumber }</mark></span>
+                        </div>
+                        <button class="pay" ${ selectArr.length ? '' : 'disabled'}>去支付</button>
+                        <button class="clear">清空购物车</button>
+                        
+                    </div>
+                    <div class="top2">
+                      `
+                        cartList.forEach(item =>{
+                            str += `
+                            <div class="liang">
+                                <input data-id=${ item.list_id } class="select" type="checkbox" ${ item.isSelect ? 'checked' : ''}>
+                                <span class="tu">
+                                    <img src="${item.list_url}" alt="">
+                                </span>
+                                <p class="jiex">${item.list_name}</p>
+                                <span class="dan">￥${item.list_price}</span>
+                                <button data-id=${item.list_id} class="jian">-</button>
+                                <input class="ko" type="text" value="${item.number}">
+                                <button data-id=${item.list_id} class="add">+</button>
+                                <span class="xiaoji">￥ ${item.xiaoji.toFixed(2)}</span>
+                                <a data-id=${item.list_id} class="del">删除</a>
+                            </div>
+                            `
+                        })
+                    //  
+                    
+
+
+                      str += `
+                    </div>                    
+                
+                `
+
+
+            $('.box').html(str)
+
+
+        }
+
+
+        function bindEvent(){
+            //全选
+            $('.box').on('change','.selectAll',function(){
+
+            //    console.log(this.checked)
+
+                cartList.forEach(item =>{
+                    item.isSelect = this.checked
+                })
+                bindHtml()
+
+                localStorage.setItem('cartList',JSON.stringify(cartList))
+
+            })
+
+            //单选
+            $('.box').on('change','.select',function(){
+                // console.log($(this).data('id'))
+
+                const id = $(this).data('id')
+
+                cartList.forEach(function(item){
+                    if(item.list_id === id){
+                        item.isSelect = !item.isSelect
+                    }
+                })
+                bindHtml()
+
+                localStorage.setItem('cartList',JSON.stringify(cartList))
+
+
+            })
+    
+            //减少商品数量
+             $('.box').on('click','.jian',function(){
+                // console.log(this)
+                
+                const id = $(this).data('id')
+
+                cartList.forEach(function(item){
+                    if(item.list_id === id){
+
+                        item.number > 1 ? item.number-- : ''
+                        // item.number--
+                        item.xiaoji = item.list_price * item.number
+
+                    }
+                })
+                bindHtml()
+
+                localStorage.setItem('cartList',JSON.stringify(cartList))
+
+
+            })
+        
+            //增加商品数量
+            $('.box').on('click','.add',function(){
+                const id = $(this).data('id')
+
+                cartList.forEach(function(item){
+                    if(item.list_id === id){
+                        item.number++
+                        item.xiaoji = item.list_price * item.number
+                    }
+                })
+                bindHtml()
+
+                localStorage.setItem('cartList',JSON.stringify(cartList))
+
+            })
+
+            //删除商品   这里有个bug 不知道怎么做
+            $('.box').on('click','.del',function(){
+                const id = $(this).data('id')
+                cartList.forEach(function(item){
+                    if(item.list_id === id){
+                        if (window.confirm('确定要删除该项吗?')) {
+                            $(item.list_id).remove();
+                        } 
+                    }
+            })
+                bindHtml()
+                localStorage.setItem('cartList',JSON.stringify(cartList))
+            })
+
+            //清空购物车  //这里有一个bug
+            $('.box').on('click','.clear',function(){
+
+                window.localStorage.removeItem('cartList')
+                //就是这里
+                bindHtml()
+                localStorage.setItem('cartList',JSON.stringify(cartList))
+                
+            })
+
+        
+
+        }</script></body></html>

@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 1200px;
+    height: 500px;
+    background: darkblue;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+.top {
+    width: 1200px;
+    height: 100px;
+    background: saddlebrown;
+}
+
+.top p {
+    width: 100px;
+    height: 100px;
+    /* background: gold; */
+    line-height: 100px;
+    margin-left: 20px;
+    display: block;
+    float: left;
+}
+
+.top .zong {
+    width: 200px;
+    height: 100px;
+
+    /* background: darkcyan; */
+    float: left;
+    
+}
+
+.top .zong span {
+    line-height: 100px;
+    
+}
+
+.top .zong span mark {
+ 
+    
+    color: red;
+    font-weight: 700;
+    background: none;
+    
+    
+}
+
+.top .shu {
+    width: 100px;
+    height: 100px;
+    /* background: sienna; */
+    float: left;
+   
+}
+
+.top .shu span {
+    line-height: 100px; 
+}
+
+.top .shu span mark {
+    color: red;
+    font-weight: 700;
+    background: none;
+}
+
+.top .pay {
+    width: 80px;
+    height: 30px;
+    background: blueviolet;
+    border: none;
+    margin-top: 35px;
+}
+
+.top .clear {
+    width: 80px;
+    height: 30px;
+    background: darkcyan;
+    border: none;
+    margin-top: 35px;
+    margin-left: 15px;
+}
+
+.top2 {
+    width: 1200px;
+    height: 400px;
+    background: gold;
+    overflow: hidden;
+}
+
+.top2 .liang {
+    width: 1200px;
+    height: 80px;
+    background: gray;
+    margin: 10px auto;
+}
+
+.top2 .liang input {
+    margin-top: 35px;
+    float: left;
+    margin-left: 68px;
+}
+
+.top2 .liang .tu {
+    width: 100px;
+    height: 80px;
+    /* background: hotpink; */
+    float: left;
+    margin-left: 20px;
+
+}
+
+.top2 .liang .tu img {
+    width: 100px;
+    height: 80px;
+}
+
+.top2 .liang .jiex {
+    line-height: 80px;
+    float: left;
+    margin-left: 30px;
+}
+
+.top2 .liang .ko {
+    width: 30px;
+    height: 28px;
+    text-align: center;
+    float: left;
+    margin-top: 24px;
+    margin-left: 30px;
+}
+
+.top2 .liang .jian {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 25px;
+}
+
+.top2 .liang .add {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 25px;
+}
+
+.top2 .liang .del {
+    float: left;
+    margin-left: 50px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.top2 .liang .dan {
+    float: left;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.top2 .liang .xiaoji {
+    float: left;
+    margin-top: 30px;
+    margin-left: 20px;
+}

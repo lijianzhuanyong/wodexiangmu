@@ -1,0 +1,355 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul, li, ol{
+    list-style: none;
+   
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    
+    margin: 0 auto;
+    overflow: hidden;
+    
+    
+}
+main #header {
+    width: 100%;
+    height: 80px;
+    /* background: tan; */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid burlywood;
+}
+
+
+
+#header2{
+    width: 100%;
+    height: 100%;
+    /* background: chartreuse; */
+    overflow: hidden;
+    border-bottom: 1px solid sienna;
+}
+
+#header2 #nav{
+    display: none;
+    width: 1200px;
+    height: 140px;
+    margin: 0 auto;
+
+}
+#header2 #nav li{
+    
+    float: left;
+    width: 150px;
+    height: 50px;
+    margin-left: 20px;
+    text-align: center;
+    border-right: 1px solid red;
+    margin-top: 32px;
+    
+}
+
+#header2 #nav li:nth-child(1){
+    margin-left: 50px;
+}
+
+
+
+
+
+
+#header2 .top2{
+    width: 1200px;
+    height: 100px;
+    /* background: salmon; */
+    margin: 0 auto;
+    overflow: hidden;
+    border-bottom: 1px solid sienna;
+}
+
+#header2 .top2 .cao{
+    width: 1200px;
+    height: 50px;
+    /* background: seagreen; */
+    margin-top: 50px;
+    
+}
+#header2 .top2 .cao li{
+    float: left;
+    margin-right: 50px;
+    margin-left: 65px;
+    line-height: 50px;
+    text-align: center;
+}
+
+#header2 .top2 .cao li a{
+    text-decoration: none;
+    color: silver;
+    text-shadow:2px 0px 1px #000;
+   
+    /* box-shadow:4px 4px 5px #999;  */
+}
+
+
+#banner{
+    width: 1200px;
+    height: 600px;
+    /* background: gold; */
+    margin: 0 auto;
+}
+#banner .zhong{
+    width: 1100px;
+    height: 600px;
+    /* background: greenyellow; */
+    margin: 0 auto;
+}
+
+#banner .zhong .jia{
+    width: 400px;
+    height: 400px;
+    /* background: saddlebrown; */
+    float: left;
+    margin-top: 50px;
+    
+}
+
+#banner .zhong .jia h2{
+    font-weight: 200;
+}
+#banner .zhong .jia p{
+    color: darkgray;
+    font-size: 14px;
+    margin-top: 5px;
+}
+#banner .zhong .jia .ke{
+    width:400px;
+    height: 80px;
+    /* background: darkblue; */
+    border-bottom: 1px solid silver;
+}
+
+#banner .zhong .jia span{
+   display: block;
+    color: red;
+    font-size: 14px;
+    margin-top: 14px;
+    
+}
+#banner .zhong .jia mark{
+    background: none;
+    color: red;
+    font-size: 18px;
+}
+#banner .zhong .jia .song{
+    width: 50px;
+    height: 100px;
+    background: #f5f5f5;
+    overflow: hidden;
+    float: left;
+    border-left: 1px solid silver;
+    border-bottom: 1px solid silver;
+}
+#banner .zhong .jia .song .glyphicon{
+    color: green;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#banner .zhong .jia .di{
+    width: 350px;
+    height: 100px;
+    background: #f5f5f5;
+    border-bottom: 1px solid silver;
+    border-right: 1px solid silver;
+    float: left;
+}
+ #banner .zhong .jia .di .dii{
+    float: left;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+#banner .zhong .jia .di:nth-child(6) .dii{
+    color: red;
+    display: block;
+    
+}
+#banner .zhong .jia .zong{
+    width: 400px;
+    height: 70px;
+  
+    float: left;
+    margin-top: 10px;
+    border-bottom: 1px solid silver;
+}
+#banner .zhong .jia .zong .dd{
+    color: red;
+    font-weight: 700;
+}
+#banner .zhong .jia .jiar{
+    width: 200px;
+    height: 50px;
+    background: tomato;
+    float: left;
+    text-align: center;
+    margin-top: 40px;
+    cursor: pointer;
+}
+#banner .zhong .jia .jiaf{
+    font-size: 18px;
+    font-weight: 700;
+    color: wheat;
+    
+}
+
+
+
+
+
+
+/* 放大镜效果 */
+img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+main #banner .zhong .box {
+    width: 450px;
+    float: left;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+}
+
+main #banner .zhong .box>.show {
+    width: 450px;
+    height: 450px;
+    border: 1px solid #333;
+    position: relative;
+}
+
+main #banner .zhong .box>.show>.mask {
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    opacity: .4;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    display: none;
+}
+
+main #banner .zhong .box>.list {
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+main #banner .zhong .box>.list>p {
+    width: 54px;
+    height: 54px;
+    border: 1px solid #333;
+    margin-right: 10px;
+}
+
+main #banner .zhong .box>.list>p.active {
+    border-color: red;
+}
+
+main #banner .zhong .box>.enlarge {
+    /* 容器 与背景图的比例为 1 ：2 */
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 101%;
+    background: url(../images/10big.jpg) no-repeat;
+    background-size: 800px 800px;
+    background-position: 0 0;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* 搜索引擎 */
+
+.search_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+    height: 60px;
+    border-radius: 40px;
+    padding: 10px;
+    display: flex;
+}
+
+/* .search_box:hover .search_text {
+    width: 440px;
+    padding: 0 10px;
+} */
+
+.search_box:hover .logo_box {
+    color: tomato;
+}
+
+.search_text {
+
+
+    height: 40px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 15px;
+    width: 0px;
+    transition: 1s;
+    color: white;
+}
+
+.logo_box {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background: #686de0;
+    position: relative;
+
+}
+
+.logo_box i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+
+
+
